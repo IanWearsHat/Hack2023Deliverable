@@ -1,3 +1,14 @@
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+html, body {
+	margin: 0;
+}
+
+.App {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
