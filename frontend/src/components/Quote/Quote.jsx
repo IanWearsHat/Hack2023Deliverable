@@ -1,23 +1,4 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import './quote.css';
-
-const card = (
-  <React.Fragment>
-    <CardContent>
-      <Typography sx={{ textAlign: "center" }} variant="h5" component="div">
-        "Little hellions, kids feeling rebellious"
-      </Typography>
-      <Typography sx={{ textAlign: "right" }} color="text.secondary">
-        -Reiko (November 23, 2023)
-      </Typography>
-    </CardContent>
-  </React.Fragment>
-);
-
-
 
 function Quote({name, quote, date}) {
     return (
@@ -25,7 +6,6 @@ function Quote({name, quote, date}) {
         <p className="quote-text">"{quote}"</p>
         <p className="quote-details">-{name} {date}</p>
       </div>
-      // <Card variant="outlined" sx={{ borderRadius: "12px", border: 1}}>{card}</Card>
     );
 }
 

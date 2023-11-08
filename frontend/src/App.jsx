@@ -4,22 +4,33 @@ import React, { useState } from 'react';
 
 import "./App.css";
 import Quote from "./components/Quote/Quote.jsx";
+import AgeDropdown from "./components/AgeDropdown/AgeDropdown.jsx";
 
 function App() {
+	const [filter, setFilter] = useState("");
 
+	const handleOptionClicked = (optionFilter) => {
+		setFilter(optionFilter);
+	};
+
+	
 	const [quotes, setQuotes] = useState([]);
 
 	let getQuotesParams = {
-		time_cutoff: "all"
+		time_cutoff: filter
 	};
 
 	const onButtonClick = () => {
-		let res = axios.get("/api/quote", { params: getQuotesParams })
+		// only works if the filter is not an empty string
+		if (filter) {
+			axios.get("/api/quote", { params: getQuotesParams })
 			.then((response) => {
 				setQuotes(response.data);
 				console.log(response.data);
-			})
+			});
+		}
 	};
+
 
 	return (
 		<div className="App">
@@ -37,6 +48,8 @@ function App() {
 					<button type="submit">Submit</button>
 				</form>
 
+				<AgeDropdown onOptionClicked={handleOptionClicked}/>
+				{/* TODO: Make this button prettier */}
 				<button onClick={onButtonClick}>See Previous Quotes!</button>
 			</div>
 			
