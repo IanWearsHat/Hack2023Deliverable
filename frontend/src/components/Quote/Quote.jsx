@@ -1,10 +1,10 @@
-import './quote.css';
+import styles from './Quote.module.css';
 
 export default function Quote({name, quote, date}) {
     return (
-      <div className="quote">
-        <p className="quote-text">"{quote}"</p>
-        <p className="quote-details">-{name} {date}</p>
+      <div className={styles.quote}>
+        <p className={styles.quoteText}>"{quote}"</p>
+        <p className={styles.quoteDetails}>-{name} {date}</p>
       </div>
     );
 }

@@ -6,7 +6,7 @@ import { Popper as BasePopper } from '@mui/base/Popper';
 import { styled } from '@mui/system';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 
-import './ageDropdown.css';
+import './AgeDropdown.module.css';
 
 export default function AgeDropdown({onOptionClicked}) {
   return (
