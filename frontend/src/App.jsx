@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import "./App.css";
 import Quote from "./components/Quote/Quote.jsx";
 import AgeDropdown from "./components/AgeDropdown/AgeDropdown.jsx";
+import QuoteForm from "./components/QuoteForm/QuoteForm.jsx";
 
 function App() {
 	const [filter, setFilter] = useState("");
@@ -13,7 +14,7 @@ function App() {
 		setFilter(optionFilter);
 	};
 
-	
+
 	const [quotes, setQuotes] = useState([]);
 
 	let getQuotesParams = {
@@ -21,7 +22,7 @@ function App() {
 	};
 
 	const onButtonClick = () => {
-		// only works if the filter is not an empty string
+		// only works if the filter is not an empty string i.e. no option clicked
 		if (filter) {
 			axios.get("/api/quote", { params: getQuotesParams })
 			.then((response) => {
@@ -39,14 +40,7 @@ function App() {
 				<h1>Hack @ UCI Tech Deliverable</h1>
 
 				<h2>Submit a quote</h2>
-				{/* TODO: implement custom form submission logic to not refresh the page */}
-				<form action="/api/quote" method="post">
-					<label htmlFor="input-name">Name</label>
-					<input type="text" name="name" id="input-name" required />
-					<label htmlFor="input-message">Quote</label>
-					<input type="text" name="message" id="input-message" required />
-					<button type="submit">Submit</button>
-				</form>
+				<QuoteForm/>
 
 				<AgeDropdown onOptionClicked={handleOptionClicked}/>
 				{/* TODO: Make this button prettier */}
@@ -58,7 +52,7 @@ function App() {
 				{/* TODO: Display the actual quotes from the database */}
 				{/* Button actually starts the animation and the axios call*/}
 				
-				<div className="messages">
+				<div className="quoteList">
 					{
 						quotes.map( (quoteItem, index) => (
 							<Quote
