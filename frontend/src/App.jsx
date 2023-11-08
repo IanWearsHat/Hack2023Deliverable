@@ -32,6 +32,17 @@ function App() {
 		}
 	};
 
+	const handleQuoteSubmitted = (newName, newQuote) => {
+		setQuotes([
+			...quotes,
+			{
+				name: newName,
+				message: newQuote,
+				time: new Date().toISOString().split('.')[0]
+			}
+		]);
+	}
+
 
 	return (
 		<div className="App">
@@ -40,7 +51,7 @@ function App() {
 				<h1>Hack @ UCI Tech Deliverable</h1>
 
 				<h2>Submit a quote</h2>
-				<QuoteForm/>
+				<QuoteForm onQuoteSubmitted={handleQuoteSubmitted}/>
 
 				<AgeDropdown onOptionClicked={handleOptionClicked}/>
 				{/* TODO: Make this button prettier */}
@@ -54,7 +65,7 @@ function App() {
 				
 				<div className="quoteList">
 					{
-						quotes.map( (quoteItem, index) => (
+						quotes.toReversed().map( (quoteItem, index) => (
 							<Quote
 								key={index}
 								name={quoteItem.name}
