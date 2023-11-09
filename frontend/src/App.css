@@ -1,0 +1,23 @@
+.App {
+    display: flex;
+}
+
+.quoteInput {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 90vh;
+
+    /* just for visualization */
+    background: rgb(233, 233, 233);
+}
+
+.previousQuotes {
+    width: 50vw;
+    /* just for visualization */
+    background: rgb(148, 148, 148);
+}

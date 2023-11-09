@@ -46,7 +46,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className="quote-input">
+			<div className="quoteInput">
 				{/* TODO: include an icon for the quote book */}
 				<h1>Hack @ UCI Tech Deliverable</h1>
 
@@ -58,7 +58,7 @@ function App() {
 				<button onClick={onButtonClick}>See Previous Quotes!</button>
 			</div>
 			
-			<div className="previous-quotes">
+			<div className="previousQuotes">
 				<h2>Previous Quotes</h2>
 				{/* TODO: Display the actual quotes from the database */}
 				{/* Button actually starts the animation and the axios call*/}
