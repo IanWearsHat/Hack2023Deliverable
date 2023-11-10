@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import StyledButton from '../StyledButton/StyledButton.jsx';
-
 import AgeDropdown from "../AgeDropdown/AgeDropdown.jsx";
 import QuoteForm from "../QuoteForm/QuoteForm.jsx";
 

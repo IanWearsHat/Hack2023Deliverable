@@ -6,8 +6,6 @@ import "./App.css";
 import QuoteInput from "./components/QuoteInput/QuoteInput.jsx";
 import PreviousQuotes from "./components/PreviousQuotes/PreviousQuotes.jsx";
 
-import { motion } from "framer-motion";
-
 
 function App() {
 	const [filter, setFilter] = useState("");
@@ -44,31 +42,6 @@ function App() {
 			}
 		]);
 	};
-
-	const container = {
-		hidden: {},
-		show: {
-			transition: {
-				staggerChildren: 0.08
-			}
-		}
-	};
-
-	const item = {
-		hidden: {
-			opacity: 0,
-			y: 60
-		},
-		show: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 0.9,
-				ease: [0, 0.71, 0.2, 1.01]
-			}
-		}
-	};
-
 
 	return (
 		<div className="App">
