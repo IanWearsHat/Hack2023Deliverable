@@ -42,7 +42,10 @@
 
 .quoteInputFlex {
     display: flex;
-    gap: 2rem;
+}
+
+.quoteInputFlex > * {
+    margin: 1rem;
 }
 
 .quoteSelector {
