@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { motion } from "framer-motion";
 
+import StyledButton from '../StyledButton/StyledButton.jsx';
+
 import AgeDropdown from "../AgeDropdown/AgeDropdown.jsx";
 import QuoteForm from "../QuoteForm/QuoteForm.jsx";
 
@@ -10,7 +12,7 @@ import styles from './QuoteInput.module.css';
 export default function QuoteInput({onQuoteSubmitted, onOptionClicked, onButtonClicked}) {
 
     const [formCollapsed, setFormCollapsed] = useState(false);
-    
+
     return (
         <motion.div
             className="quoteInput"
@@ -36,13 +38,15 @@ export default function QuoteInput({onQuoteSubmitted, onOptionClicked, onButtonC
                 
                 <div className={styles.previousQuoteSelector}>
                     <h2>See previous quotes</h2>
-                    <AgeDropdown onOptionClicked={onOptionClicked}/>
-                    <button onClick={() => {
-                        onButtonClicked();
-                        setFormCollapsed(true);
-                    }}>
-                        Apply filter!
-                    </button>
+                    <div className={styles.quoteSelector}>
+                        <AgeDropdown onOptionClicked={onOptionClicked}/>
+                        <StyledButton onClick={() => {
+                            onButtonClicked();
+                            setFormCollapsed(true);
+                        }}>
+                            Apply filter
+                        </StyledButton>
+                    </div>
                 </div>
             </div>
         </motion.div>
