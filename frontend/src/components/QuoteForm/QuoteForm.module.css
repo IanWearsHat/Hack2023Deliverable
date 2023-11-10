@@ -21,4 +21,9 @@ input {
     font-weight: 700;
     box-sizing: border-box;
     width: 100%;
+    border-radius: 8px;
+    border: none;
+    text-indent: 6px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
 }

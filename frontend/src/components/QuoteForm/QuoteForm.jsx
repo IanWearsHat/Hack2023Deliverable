@@ -38,6 +38,7 @@ export default function QuoteForm({ onQuoteSubmitted, onButtonClick }) {
                 type="text"
                 name="name"
                 id="input-name"
+                placeholder="Input name..."
                 value={inputNameText}
                 onChange={e => setInputNameText(e.target.value)}
                 required
@@ -47,6 +48,7 @@ export default function QuoteForm({ onQuoteSubmitted, onButtonClick }) {
                 type="text"
                 name="message"
                 id="input-message"
+                placeholder="Input quote..."
                 value={inputQuoteText}
                 onChange={e => setInputQuoteText(e.target.value)}
                 required
