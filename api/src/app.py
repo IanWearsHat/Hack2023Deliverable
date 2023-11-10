@@ -66,7 +66,6 @@ def get_message(time_cutoff: str) -> list[Quote]:
     date_cutoff = now - timeOffset
     date_cutoff = date_cutoff.isoformat()
 
-    
     returned_quotes = []
 
     """
@@ -89,8 +88,3 @@ def get_message(time_cutoff: str) -> list[Quote]:
     returned_quotes.reverse()
     return returned_quotes
 
-# TODO: remove this for production
-# endpoint to save to database (testing only)
-@app.get("/close")
-def close():
-    on_shutdown()
