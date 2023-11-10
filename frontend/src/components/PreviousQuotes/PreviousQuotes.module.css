@@ -5,3 +5,7 @@
     /* just for visualization */
     background: rgb(1, 163, 41);
 }
+
+#previousQuotesHeader {
+    font-size: 36px;
+}
