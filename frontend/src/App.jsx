@@ -45,7 +45,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<img src="./quotebook.png" />
+			<img src="./quotebook.png" alt="quotebook logo"/>
 
 			<QuoteInput
 				className="quoteInput"
