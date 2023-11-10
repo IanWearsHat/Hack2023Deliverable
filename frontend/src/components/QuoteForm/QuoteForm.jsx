@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import styles from './QuoteForm.module.css';
+
 export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
 
     const [inputNameText, setInputNameText] = useState('');
@@ -29,7 +31,7 @@ export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
 
 
     return (
-        <form onSubmit={handleSubmit} action="/api/quote" method="post">
+        <form className={styles.quoteForm} onSubmit={handleSubmit} action="/api/quote" method="post">
             <label htmlFor="input-name">Name</label>
             <input
                 type="text"

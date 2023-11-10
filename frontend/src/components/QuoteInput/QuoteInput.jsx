@@ -4,6 +4,8 @@ import AgeDropdown from "../AgeDropdown/AgeDropdown.jsx";
 import QuoteForm from "../QuoteForm/QuoteForm.jsx";
 import { useState } from "react";
 
+import styles from './QuoteInput.module.css';
+
 export default function QuoteInput({onQuoteSubmitted, onOptionClicked, onButtonClicked}) {
 
     const [formCollapsed, setFormCollapsed] = useState(false);
@@ -11,27 +13,37 @@ export default function QuoteInput({onQuoteSubmitted, onOptionClicked, onButtonC
     return (
         <motion.div
             className="quoteInput"
-            initial={{ width: formCollapsed ? "50vw": "100vw" }}
-            animate={{ width: formCollapsed ? "50vw": "100vw" }}
+            initial={{ width: formCollapsed ? "50%": "100%" }}
+            animate={{ width: formCollapsed ? "50%": "100%" }}
             transition={{
+                type: 'spring',
                 duration: 1.5,
-                ease: [.04, .71, .32, 1]
+                ease: [.04,.71,.4,.88],
+                bounce: 0.4
             }}
         >
             
-            {/* TODO: include an icon for the quote book */}
             <h1>Hack @ UCI Tech Deliverable</h1>
-
-            <h2>Submit a quote</h2>
-            <QuoteForm onQuoteSubmitted={onQuoteSubmitted} onButtonClick={() => setFormCollapsed(true)}/>
-
-            <AgeDropdown onOptionClicked={onOptionClicked}/>
-
-            {/* TODO: Make this button prettier */}
-            <button onClick={() => {
-                onButtonClicked();
-                setFormCollapsed(true);
-            }}>See Previous Quotes!</button>
+            
+            <div className={styles.quoteInputFlex}>
+                <div className={styles.inputForm}>
+                    <h2>Submit a quote</h2>
+                    <QuoteForm onQuoteSubmitted={onQuoteSubmitted} onButtonClick={() => setFormCollapsed(true)}/>
+                </div>
+                
+                <p>or</p>
+                
+                <div className={styles.previousQuoteSelector}>
+                    <h2>See previous quotes</h2>
+                    <AgeDropdown onOptionClicked={onOptionClicked}/>
+                    <button onClick={() => {
+                        onButtonClicked();
+                        setFormCollapsed(true);
+                    }}>
+                        Apply filter!
+                    </button>
+                </div>
+            </div>
         </motion.div>
     );
 }

@@ -1,0 +1,17 @@
+h1, h2, label {
+    color: #e7f0fc;
+    font-weight: 300;
+    text-align: center;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+.quoteInputFlex {
+    display: flex;
+    gap: 2rem;
+}
+
+
+

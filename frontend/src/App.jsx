@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import React, { useState, useId } from 'react';
+import React, { useState } from 'react';
 
 import "./App.css";
 import Quote from "./components/Quote/Quote.jsx";
@@ -69,6 +69,8 @@ function App() {
 
 	return (
 		<div className="App">
+			<img src="../public/quotebook.png"/>
+
 			<QuoteInput
 				className="quoteInput"
 				onQuoteSubmitted={handleQuoteSubmitted}
@@ -80,9 +82,6 @@ function App() {
 			
 			<div className="previousQuotes">
 				<h2>Previous Quotes</h2>
-				{/* TODO: Display the actual quotes from the database */}
-				{/* Button actually starts the animation and the axios call*/}
-				
 				<div className="quoteList">
 					{
 						quotes.toReversed().map( (quoteItem, index) => ((

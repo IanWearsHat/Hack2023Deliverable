@@ -9,20 +9,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 14rem;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
 
     z-index: 1;
 
     /* just for visualization */
-    background: rgba(245, 0, 0, 0.3);
+    /* background-color: #15171a; */
+
+    background: radial-gradient(circle, rgba(39,43,50,1) 0%, rgba(21,23,26,1) 40%, rgba(21,23,26,1) 100%);
+	background-size: 100rem 100rem;
+    /* background-size: 150% 150%; */
+	animation: gradient 12s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 20% 60%;
+	}
+	50% {
+		background-position: 80% 60%;
+	}
+	100% {
+		background-position: 20% 60%;
+	}
 }
 
 .previousQuotes {
     position: absolute;
-    left: 50vw;
-    width: 50vw;
+    left: 50%;
+    width: 50%;
     /* just for visualization */
     background: rgb(1, 163, 41);
 }
