@@ -79,7 +79,7 @@ const StyledButton = styled('button', { shouldForwardProp: () => true })(
     ({ theme }) => `
   position: relative;
   font-family: IBM Plex Sans, sans-serif;
-  font-size: 1.075rem;
+  font-size: 1.175rem;
   box-sizing: border-box;
   width: 100%;
   padding: 8px 12px;
@@ -120,7 +120,7 @@ const StyledButton = styled('button', { shouldForwardProp: () => true })(
 const Listbox = styled('ul')(
     ({ theme }) => `
   font-family: IBM Plex Sans, sans-serif;
-  font-size: 1.075rem;
+  font-size: 1.175rem;
   box-sizing: border-box;
   padding: 6px;
   margin: 12px 0;

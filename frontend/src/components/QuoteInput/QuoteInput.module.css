@@ -15,7 +15,7 @@
     -webkit-box-sizing: border-box;
     
 
-    background: radial-gradient(circle, rgba(39,43,50,1) 0%, rgba(21,23,26,1) 40%, rgba(21,23,26,1) 100%);
+    background: radial-gradient(circle, rgba(38,41,47,1) 0%, rgba(21,23,26,1) 40%, rgba(21,23,26,1) 100%);
 	background-size: 100rem 100rem;
 	animation: gradient 9s ease infinite;
 }
@@ -45,8 +45,12 @@
     display: flex;
 }
 
+.quoteInputFlex > p {
+    color: var(--blue-200);
+}
+
 .quoteSelector {
-    display:flex;
+    display: flex;
     flex-direction: column;
     padding: 1rem;
     border: 1px solid var(--grey-200);
