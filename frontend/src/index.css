@@ -31,7 +31,7 @@ h1, h2, h3 {
 
 h1 {
 	font-weight: 300;
-    font-size: 52px;
+    font-size: 58px;
 }
 
 h2 {
@@ -52,4 +52,10 @@ img {
 	filter: invert(1);
 
 	z-index: 2;
+}
+
+@media (max-width: 768px) {
+	img {
+		width: 5rem;
+	}
 }
