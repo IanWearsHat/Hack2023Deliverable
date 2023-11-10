@@ -1,9 +1,13 @@
 # Hack at UCI Tech Organizer Deliverable
 
+
 Thank you for your interest in applying to the Hack at UCI Tech team!
 
 In order for your application to be considered, you must complete this
 deliverable. Please follow the instructions below.
+
+## New dependencies
+This project uses Axios, Framer Motion, and Mui Base.
 
 ## Setup
 
