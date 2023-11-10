@@ -11,9 +11,6 @@ import './AgeDropdown.module.css';
 export default function AgeDropdown({onOptionClicked}) {
   return (
     <div>
-      {/* <Label htmlFor="named-select">
-        With the <code>name</code> prop
-      </Label> */}
       <Select
         placeholder="Choose a filter..."
         id="named-select"

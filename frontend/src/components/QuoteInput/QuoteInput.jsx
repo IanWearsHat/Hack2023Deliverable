@@ -1,8 +1,9 @@
+import { useState } from "react";
+
 import { motion } from "framer-motion";
 
 import AgeDropdown from "../AgeDropdown/AgeDropdown.jsx";
 import QuoteForm from "../QuoteForm/QuoteForm.jsx";
-import { useState } from "react";
 
 import styles from './QuoteInput.module.css';
 
