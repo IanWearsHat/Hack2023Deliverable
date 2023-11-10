@@ -1,18 +1,20 @@
 import axios from "axios";
 
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 
 import "./App.css";
 import Quote from "./components/Quote/Quote.jsx";
-import AgeDropdown from "./components/AgeDropdown/AgeDropdown.jsx";
-import QuoteForm from "./components/QuoteForm/QuoteForm.jsx";
+import QuoteInput from "./components/QuoteInput/QuoteInput.jsx";
+
+import { motion } from "framer-motion";
+
 
 function App() {
 	const [filter, setFilter] = useState("");
 
 	const handleOptionClicked = (optionFilter) => {
 		setFilter(optionFilter);
-	};
+	};	
 
 
 	const [quotes, setQuotes] = useState([]);
@@ -21,15 +23,12 @@ function App() {
 		time_cutoff: filter
 	};
 
-	const onButtonClick = () => {
+	const setQuotesFromDatabase = () => {
 		// only works if the filter is not an empty string i.e. no option clicked
-		if (filter) {
-			axios.get("/api/quote", { params: getQuotesParams })
-			.then((response) => {
-				setQuotes(response.data);
-				console.log(response.data);
-			});
-		}
+		axios.get("/api/quote", { params: getQuotesParams })
+		.then((response) => {
+			setQuotes(response.data);
+		});
 	};
 
 	const handleQuoteSubmitted = (newName, newQuote) => {
@@ -41,22 +40,43 @@ function App() {
 				time: new Date().toISOString().split('.')[0]
 			}
 		]);
-	}
+	};
+
+	const container = {
+		hidden: { },
+		show: {
+		  transition: {
+			staggerChildren: 0.08
+		  }
+		}
+	  };
+	
+	  const item = {
+		hidden: {
+		  opacity: 0,
+		  y: 60
+		},
+		show: {
+		  opacity: 1,
+		  y: 0,
+		  transition: {
+			duration: 0.9,
+			ease: [0, 0.71, 0.2, 1.01]
+		  }
+		}
+	  };
 
 
 	return (
 		<div className="App">
-			<div className="quoteInput">
-				{/* TODO: include an icon for the quote book */}
-				<h1>Hack @ UCI Tech Deliverable</h1>
-
-				<h2>Submit a quote</h2>
-				<QuoteForm onQuoteSubmitted={handleQuoteSubmitted}/>
-
-				<AgeDropdown onOptionClicked={handleOptionClicked}/>
-				{/* TODO: Make this button prettier */}
-				<button onClick={onButtonClick}>See Previous Quotes!</button>
-			</div>
+			<QuoteInput
+				className="quoteInput"
+				onQuoteSubmitted={handleQuoteSubmitted}
+				onOptionClicked={handleOptionClicked}
+				onButtonClicked={() => {
+					if (filter) setQuotesFromDatabase();
+				}}
+			/>
 			
 			<div className="previousQuotes">
 				<h2>Previous Quotes</h2>
@@ -65,14 +85,14 @@ function App() {
 				
 				<div className="quoteList">
 					{
-						quotes.toReversed().map( (quoteItem, index) => (
+						quotes.toReversed().map( (quoteItem, index) => ((
 							<Quote
 								key={index}
 								name={quoteItem.name}
 								quote={quoteItem.message}
 								date={quoteItem.time}
 							/>
-						))
+						)))
 					}
 				</div>
 			</div>

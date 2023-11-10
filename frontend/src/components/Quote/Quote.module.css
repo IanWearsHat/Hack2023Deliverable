@@ -2,8 +2,8 @@
     border: 1px solid black;
     border-radius: 16px;
     max-width: 50vw;
-    padding: 1.7em;
-    margin-bottom: 1em;
+    padding: 1.7rem;
+    margin: 1rem;
 }
 
 .quote > p {

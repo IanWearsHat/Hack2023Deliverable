@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function QuoteForm({onQuoteSubmitted}) {
+export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
 
     const [inputNameText, setInputNameText] = useState('');
     const [inputQuoteText, setInputQuoteText] = useState('');
@@ -20,6 +20,7 @@ export default function QuoteForm({onQuoteSubmitted}) {
         var returnText = inputQuoteText;
 
         onQuoteSubmitted(returnName, returnText);
+        onButtonClick();
 
         /* Set input fields to empty after submitting */
         setInputNameText('');

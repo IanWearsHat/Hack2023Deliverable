@@ -6,6 +6,11 @@ html, body {
 	margin: 0;
 }
 
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
 .App {
 	/* height: 100vh; */
 	/* display: flex;

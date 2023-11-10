@@ -1,23 +1,28 @@
 .App {
     display: flex;
+    position: relative;
 }
 
 .quoteInput {
-    position: sticky;
+    position: fixed;
     top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50vw;
+    width: 100vw;
     height: 90vh;
 
+    z-index: 1;
+
     /* just for visualization */
-    background: rgb(233, 233, 233);
+    background: rgba(245, 0, 0, 0.3);
 }
 
 .previousQuotes {
+    position: absolute;
+    left: 50vw;
     width: 50vw;
     /* just for visualization */
-    background: rgb(148, 148, 148);
+    background: rgb(1, 163, 41);
 }
