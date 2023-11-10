@@ -48,6 +48,7 @@ export default function QuoteInput({ onQuoteSubmitted, onOptionClicked, onButton
                         </StyledButton>
                     </div>
                 </div>
+
             </div>
         </motion.div>
     );

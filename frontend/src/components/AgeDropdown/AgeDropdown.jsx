@@ -6,8 +6,6 @@ import { Popper as BasePopper } from '@mui/base/Popper';
 import { styled } from '@mui/system';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 
-import styles from './AgeDropdown.module.css';
-
 export default function AgeDropdown({ onOptionClicked }) {
     return (
         <div>
@@ -77,113 +75,113 @@ Button.propTypes = {
 
 const StyledButton = styled('button', { shouldForwardProp: () => true })(
     ({ theme }) => `
-  position: relative;
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 1.175rem;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 8px;
-  text-align: left;
-  line-height: 1.5;
-  background: ${grey[900]};
-  border: 1px solid ${grey[400]};
-  color: ${grey[300]};
-  box-shadow: 0px 2px 6px ${'rgba(0,0,0, 0.50)'
-        };
+        position: relative;
+        font-family: IBM Plex Sans, sans-serif;
+        font-size: 1.175rem;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-align: left;
+        line-height: 1.5;
+        background: ${grey[900]};
+        border: 1px solid ${grey[400]};
+        color: ${grey[300]};
+        box-shadow: 0px 2px 6px ${'rgba(0,0,0, 0.50)'
+                };
 
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 120ms;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 120ms;
 
-  &:hover {
-    background: ${grey[800]};
-    border-color: ${grey[600]};
-  }
+        &:hover {
+            background: ${grey[800]};
+            border-color: ${grey[600]};
+        }
 
-  &.${selectClasses.focusVisible} {
-    outline: 0;
-    border-color: ${blue[400]};
-    box-shadow: 0 0 0 3px ${blue[600]};
-  }
+        &.${selectClasses.focusVisible} {
+            outline: 0;
+            border-color: ${blue[400]};
+            box-shadow: 0 0 0 3px ${blue[600]};
+        }
 
-  & > svg {
-    font-size: 1rem;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    right: 10px;
-  }
+        & > svg {
+            font-size: 1rem;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            right: 10px;
+        }
   `,
 );
 
 const Listbox = styled('ul')(
     ({ theme }) => `
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 1.175rem;
-  box-sizing: border-box;
-  padding: 6px;
-  margin: 12px 0;
-  min-width: 200px;
-  border-radius: 12px;
-  overflow: auto;
-  outline: 0px;
-  background: ${grey[900]};
-  border: 1px solid ${grey[700]};
-  color: ${grey[300]};
-  box-shadow: 0px 2px 6px ${'rgba(0,0,0, 0.50)'
-        };
+        font-family: IBM Plex Sans, sans-serif;
+        font-size: 1.175rem;
+        box-sizing: border-box;
+        padding: 6px;
+        margin: 12px 0;
+        min-width: 200px;
+        border-radius: 12px;
+        overflow: auto;
+        outline: 0px;
+        background: ${grey[900]};
+        border: 1px solid ${grey[700]};
+        color: ${grey[300]};
+        box-shadow: 0px 2px 6px ${'rgba(0,0,0, 0.50)'
+                };
   `,
 );
 
 const Option = styled(BaseOption)(
     ({ theme }) => `
-  list-style: none;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: default;
+        list-style: none;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: default;
 
-  &:last-of-type {
-    border-bottom: none;
-  }
+        &:last-of-type {
+            border-bottom: none;
+        }
 
-  &.${optionClasses.selected} {
-    background-color: ${blue[900]};
-    color: ${blue[100]};
-  }
+        &.${optionClasses.selected} {
+            background-color: ${blue[900]};
+            color: ${blue[100]};
+        }
 
-  &.${optionClasses.highlighted} {
-    background-color: ${grey[800]};
-    color: ${grey[300]};
-  }
+        &.${optionClasses.highlighted} {
+            background-color: ${grey[800]};
+            color: ${grey[300]};
+        }
 
-  &.${optionClasses.highlighted}.${optionClasses.selected} {
-    background-color: ${blue[900]};
-    color: ${blue[100]};
-  }
+        &.${optionClasses.highlighted}.${optionClasses.selected} {
+            background-color: ${blue[900]};
+            color: ${blue[100]};
+        }
 
-  &.${optionClasses.disabled} {
-    color: ${grey[700]};
-  }
+        &.${optionClasses.disabled} {
+            color: ${grey[700]};
+        }
 
-  &:hover:not(.${optionClasses.disabled}) {
-    background-color: ${grey[800]};
-    color: ${grey[300]};
-  }
+        &:hover:not(.${optionClasses.disabled}) {
+            background-color: ${grey[800]};
+            color: ${grey[300]};
+        }
   `,
 );
 
 const Popper = styled(BasePopper)`
-  z-index: 1;
+    z-index: 1;
 `;
 
 const Label = styled('label')(
     ({ theme }) => `
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.85rem;
-  display: block;
-  margin-bottom: 4px;
-  font-weight: 400;
-  color: ${grey[400]};
+        font-family: IBM Plex Sans, sans-serif;
+        font-size: 0.85rem;
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 400;
+        color: ${grey[400]};
   `,
 );

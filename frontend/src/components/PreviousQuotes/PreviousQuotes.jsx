@@ -8,8 +8,9 @@ export default function PreviousQuotes({ quotes }) {
             <div className="quoteList">
                 {
                     quotes.toReversed().map((quoteItem, index) => {
-                        let unformatted = new Date(quoteItem.time.slice(0, 10));
-                        let formattedDate = unformatted.toLocaleDateString('default', {
+                        let unformatted = new Date(quoteItem.time);
+                        
+                        let formattedDate = unformatted.toLocaleDateString('en-US', {
                             year: "numeric",
                             month: "long",
                             day: "numeric",
