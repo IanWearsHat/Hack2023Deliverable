@@ -3,8 +3,8 @@ import axios from "axios";
 import React, { useState } from 'react';
 
 import "./App.css";
-import Quote from "./components/Quote/Quote.jsx";
 import QuoteInput from "./components/QuoteInput/QuoteInput.jsx";
+import PreviousQuotes from "./components/PreviousQuotes/PreviousQuotes.jsx";
 
 import { motion } from "framer-motion";
 
@@ -79,22 +79,7 @@ function App() {
 					if (filter) setQuotesFromDatabase();
 				}}
 			/>
-			
-			<div className="previousQuotes">
-				<h2>Previous Quotes</h2>
-				<div className="quoteList">
-					{
-						quotes.toReversed().map( (quoteItem, index) => ((
-							<Quote
-								key={index}
-								name={quoteItem.name}
-								quote={quoteItem.message}
-								date={quoteItem.time}
-							/>
-						)))
-					}
-				</div>
-			</div>
+			<PreviousQuotes quotes={quotes}/>
 		</div>
 	);
 

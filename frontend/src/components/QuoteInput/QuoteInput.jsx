@@ -15,7 +15,7 @@ export default function QuoteInput({onQuoteSubmitted, onOptionClicked, onButtonC
 
     return (
         <motion.div
-            className="quoteInput"
+            className={styles.quoteInput}
             initial={{ width: formCollapsed ? "50%": "100%" }}
             animate={{ width: formCollapsed ? "50%": "100%" }}
             transition={{

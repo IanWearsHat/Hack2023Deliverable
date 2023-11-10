@@ -1,47 +1,4 @@
-
-
 .App {
     display: flex;
     position: relative;
-}
-
-.quoteInput {
-    position: fixed;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-
-    z-index: 1;
-
-    /* just for visualization */
-    /* background-color: #15171a; */
-
-    background: radial-gradient(circle, rgba(39,43,50,1) 0%, rgba(21,23,26,1) 40%, rgba(21,23,26,1) 100%);
-	background-size: 100rem 100rem;
-    /* background-size: 150% 150%; */
-	animation: gradient 12s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 20% 60%;
-	}
-	50% {
-		background-position: 80% 60%;
-	}
-	100% {
-		background-position: 20% 60%;
-	}
-}
-
-.previousQuotes {
-    position: absolute;
-    left: 50%;
-    width: 50%;
-    /* just for visualization */
-    background: rgb(1, 163, 41);
 }
