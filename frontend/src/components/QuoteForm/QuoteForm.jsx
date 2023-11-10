@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+
 import styles from './QuoteForm.module.css';
 
 export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
@@ -29,6 +32,17 @@ export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
         setInputQuoteText('');
     };
 
+    const StyledButton = styled(Button)(({ theme }) => ({
+        fontSize: '16px',
+        marginTop: '1rem',
+        color: '#DAE2ED',
+        backgroundColor: '#303740',
+        '&:hover': {
+            color: '#303740',
+            backgroundColor: '#E5EAF2',
+        },
+    }));
+
 
     return (
         <form className={styles.quoteForm} onSubmit={handleSubmit} action="/api/quote" method="post">
@@ -50,7 +64,7 @@ export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
                 onChange={e => setInputQuoteText(e.target.value)}
                 required
             />
-            <button type="submit">Submit</button>
+            <StyledButton className={styles.submitButton} variant="contained" type="submit">Submit</StyledButton>
         </form>
     );
 }

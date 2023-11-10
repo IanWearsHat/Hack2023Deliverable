@@ -1,6 +1,23 @@
 :root {
 	font-family: 'Lato', system-ui, Avenir, Helvetica, Arial, sans-serif;
-	color: #e7f0fc;	
+	color: #e7f0fc;
+	--grey-50: #F3F6F9;
+	--grey-100: #E5EAF2;
+	--grey-200: #DAE2ED;
+	--grey-300: #C7D0DD;
+	--grey-400: #B0B8C4;
+	--grey-500: #9DA8B7;
+	--grey-600: #6B7A90;
+	--grey-700: #434D5B;
+	--grey-800: #303740;
+	--grey-900: #1C2025;
+
+	--blue-100: #DAECFF;
+	--blue-200: #99CCF3;
+	--blue-400: #3399FF;
+	--blue-500: #007FFF;
+	--blue-600: #0072E5;
+	--blue-900: #003A75;
 }
 
 html, body {
@@ -12,7 +29,7 @@ html {
 	overflow-x: hidden;
 }
 
-h1, h2, label {
+h1, h2 {
     color: #e7f0fc;
     font-weight: 300;
     text-align: center;
@@ -22,12 +39,7 @@ h1 {
     font-size: 52px;
 }
 
-.App {
-	/* height: 100vh; */
-	/* display: flex;
-	align-items: center;
-	justify-content: center; */
-}
+
 
 img {
     position: fixed;

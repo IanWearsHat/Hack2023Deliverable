@@ -6,7 +6,7 @@ import { Popper as BasePopper } from '@mui/base/Popper';
 import { styled } from '@mui/system';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 
-import './AgeDropdown.module.css';
+import styles from './AgeDropdown.module.css';
 
 export default function AgeDropdown({onOptionClicked}) {
   return (
@@ -14,7 +14,6 @@ export default function AgeDropdown({onOptionClicked}) {
       <Select
         placeholder="Choose a filter..."
         id="named-select"
-        name="demo-select"
         onChange={(event, child) => {
           onOptionClicked(child);
         }}
@@ -88,7 +87,7 @@ const StyledButton = styled('button', { shouldForwardProp: () => true })(
   text-align: left;
   line-height: 1.5;
   background: ${grey[900]};
-  border: 1px solid ${grey[700]};
+  border: 1px solid ${grey[400]};
   color: ${grey[300]};
   box-shadow: 0px 2px 6px ${
     'rgba(0,0,0, 0.50)'
