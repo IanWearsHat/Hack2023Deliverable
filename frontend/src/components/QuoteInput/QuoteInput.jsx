@@ -30,14 +30,14 @@ export default function QuoteInput({onQuoteSubmitted, onOptionClicked, onButtonC
             
             <div className={styles.quoteInputFlex}>
                 <div className={styles.inputForm}>
-                    <h2>Submit a quote</h2>
+                    <h3>Submit a quote</h3>
                     <QuoteForm onQuoteSubmitted={onQuoteSubmitted} onButtonClick={() => setFormCollapsed(true)}/>
                 </div>
                 
                 <p>or</p>
                 
                 <div className={styles.previousQuoteSelector}>
-                    <h2>See previous quotes</h2>
+                    <h3>See previous quotes</h3>
                     <div className={styles.quoteSelector}>
                         <AgeDropdown onOptionClicked={onOptionClicked}/>
                         <StyledButton onClick={() => {

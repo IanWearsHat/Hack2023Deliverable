@@ -2,10 +2,4 @@
     position: absolute;
     left: 50%;
     width: 50%;
-    /* just for visualization */
-    background: rgb(39, 39, 37);
-}
-
-#previousQuotesHeader {
-    font-size: 36px;
 }

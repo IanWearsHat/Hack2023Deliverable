@@ -12,12 +12,7 @@
 	--grey-800: #303740;
 	--grey-900: #1C2025;
 
-	--blue-100: #DAECFF;
 	--blue-200: #99CCF3;
-	--blue-400: #3399FF;
-	--blue-500: #007FFF;
-	--blue-600: #0072E5;
-	--blue-900: #003A75;
 }
 
 html, body {
@@ -30,17 +25,22 @@ html {
 	overflow-x: hidden;
 }
 
-h1, h2 {
-    color: #e7f0fc;
-    font-weight: 300;
+h1, h2, h3 {
     text-align: center;
 }
 
 h1 {
+	font-weight: 300;
     font-size: 52px;
 }
 
+h2 {
+	font-size: 36px;
+}
 
+h3 {
+	font-size: 30px;
+}
 
 img {
     position: fixed;
