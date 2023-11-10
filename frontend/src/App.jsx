@@ -14,7 +14,7 @@ function App() {
 
 	const handleOptionClicked = (optionFilter) => {
 		setFilter(optionFilter);
-	};	
+	};
 
 
 	const [quotes, setQuotes] = useState([]);
@@ -26,9 +26,12 @@ function App() {
 	const setQuotesFromDatabase = () => {
 		// only works if the filter is not an empty string i.e. no option clicked
 		axios.get("/api/quote", { params: getQuotesParams })
-		.then((response) => {
-			setQuotes(response.data);
-		});
+			.then((response) => {
+				setQuotes(response.data);
+			})
+			.catch(function (error) {
+				console.log(error.message);
+			});
 	};
 
 	const handleQuoteSubmitted = (newName, newQuote) => {
@@ -43,33 +46,33 @@ function App() {
 	};
 
 	const container = {
-		hidden: { },
+		hidden: {},
 		show: {
-		  transition: {
-			staggerChildren: 0.08
-		  }
+			transition: {
+				staggerChildren: 0.08
+			}
 		}
-	  };
-	
-	  const item = {
+	};
+
+	const item = {
 		hidden: {
-		  opacity: 0,
-		  y: 60
+			opacity: 0,
+			y: 60
 		},
 		show: {
-		  opacity: 1,
-		  y: 0,
-		  transition: {
-			duration: 0.9,
-			ease: [0, 0.71, 0.2, 1.01]
-		  }
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.9,
+				ease: [0, 0.71, 0.2, 1.01]
+			}
 		}
-	  };
+	};
 
 
 	return (
 		<div className="App">
-			<img src="./quotebook.png"/>
+			<img src="./quotebook.png" />
 
 			<QuoteInput
 				className="quoteInput"
@@ -79,7 +82,7 @@ function App() {
 					if (filter) setQuotesFromDatabase();
 				}}
 			/>
-			<PreviousQuotes quotes={quotes}/>
+			<PreviousQuotes quotes={quotes} />
 		</div>
 	);
 

@@ -8,75 +8,75 @@ import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 
 import styles from './AgeDropdown.module.css';
 
-export default function AgeDropdown({onOptionClicked}) {
-  return (
-    <div>
-      <Select
-        placeholder="Choose a filter..."
-        id="named-select"
-        onChange={(event, child) => {
-          onOptionClicked(child);
-        }}
-      >
-        <Option value={'week'}>Week</Option>
-        <Option value={'month'}>Month</Option>
-        <Option value={'year'}>Year</Option>
-        <Option value={'all'}>All</Option>
-      </Select>
-    </div>
-  );
+export default function AgeDropdown({ onOptionClicked }) {
+    return (
+        <div>
+            <Select
+                placeholder="Choose a filter..."
+                id="named-select"
+                onChange={(event, child) => {
+                    onOptionClicked(child);
+                }}
+            >
+                <Option value={'week'}>Week</Option>
+                <Option value={'month'}>Month</Option>
+                <Option value={'year'}>Year</Option>
+                <Option value={'all'}>All</Option>
+            </Select>
+        </div>
+    );
 }
 
 const Select = React.forwardRef(function CustomSelect(props, ref) {
-  const slots = {
-    root: Button,
-    listbox: Listbox,
-    popper: Popper,
-    ...props.slots,
-  };
+    const slots = {
+        root: Button,
+        listbox: Listbox,
+        popper: Popper,
+        ...props.slots,
+    };
 
-  return <BaseSelect {...props} ref={ref} slots={slots} />;
+    return <BaseSelect {...props} ref={ref} slots={slots} />;
 });
 
 const blue = {
-  100: '#DAECFF',
-  200: '#99CCF3',
-  400: '#3399FF',
-  500: '#007FFF',
-  600: '#0072E5',
-  900: '#003A75',
+    100: '#DAECFF',
+    200: '#99CCF3',
+    400: '#3399FF',
+    500: '#007FFF',
+    600: '#0072E5',
+    900: '#003A75',
 };
 
 const grey = {
-  50: '#F3F6F9',
-  100: '#E5EAF2',
-  200: '#DAE2ED',
-  300: '#C7D0DD',
-  400: '#B0B8C4',
-  500: '#9DA8B7',
-  600: '#6B7A90',
-  700: '#434D5B',
-  800: '#303740',
-  900: '#1C2025',
+    50: '#F3F6F9',
+    100: '#E5EAF2',
+    200: '#DAE2ED',
+    300: '#C7D0DD',
+    400: '#B0B8C4',
+    500: '#9DA8B7',
+    600: '#6B7A90',
+    700: '#434D5B',
+    800: '#303740',
+    900: '#1C2025',
 };
 
 const Button = React.forwardRef(function Button(props, ref) {
-  const { ownerState, ...other } = props;
-  return (
-    <StyledButton type="button" {...other} ref={ref}>
-      {other.children}
-      <UnfoldMoreRoundedIcon />
-    </StyledButton>
-  );
+    const { ownerState, ...other } = props;
+    return (
+        <StyledButton type="button" {...other} ref={ref}>
+            {other.children}
+            <UnfoldMoreRoundedIcon />
+        </StyledButton>
+    );
 });
 
 Button.propTypes = {
-  children: PropTypes.node,
-  ownerState: PropTypes.object.isRequired,
+    children: PropTypes.node,
+    ownerState: PropTypes.object.isRequired,
 };
 
 const StyledButton = styled('button', { shouldForwardProp: () => true })(
-  ({ theme }) => `
+    ({ theme }) => `
   position: relative;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 1.075rem;
@@ -89,9 +89,8 @@ const StyledButton = styled('button', { shouldForwardProp: () => true })(
   background: ${grey[900]};
   border: 1px solid ${grey[400]};
   color: ${grey[300]};
-  box-shadow: 0px 2px 6px ${
-    'rgba(0,0,0, 0.50)'
-  };
+  box-shadow: 0px 2px 6px ${'rgba(0,0,0, 0.50)'
+        };
 
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,27 +118,26 @@ const StyledButton = styled('button', { shouldForwardProp: () => true })(
 );
 
 const Listbox = styled('ul')(
-  ({ theme }) => `
+    ({ theme }) => `
   font-family: IBM Plex Sans, sans-serif;
   font-size: 1.075rem;
   box-sizing: border-box;
   padding: 6px;
   margin: 12px 0;
-  min-width: 320px;
+  min-width: 200px;
   border-radius: 12px;
   overflow: auto;
   outline: 0px;
   background: ${grey[900]};
   border: 1px solid ${grey[700]};
   color: ${grey[300]};
-  box-shadow: 0px 2px 6px ${
-    'rgba(0,0,0, 0.50)'
-  };
+  box-shadow: 0px 2px 6px ${'rgba(0,0,0, 0.50)'
+        };
   `,
 );
 
 const Option = styled(BaseOption)(
-  ({ theme }) => `
+    ({ theme }) => `
   list-style: none;
   padding: 8px;
   border-radius: 8px;
@@ -180,7 +178,7 @@ const Popper = styled(BasePopper)`
 `;
 
 const Label = styled('label')(
-  ({ theme }) => `
+    ({ theme }) => `
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.85rem;
   display: block;

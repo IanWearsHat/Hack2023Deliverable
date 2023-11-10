@@ -4,7 +4,7 @@ import StyledButton from '../StyledButton/StyledButton.jsx';
 
 import styles from './QuoteForm.module.css';
 
-export default function QuoteForm({onQuoteSubmitted, onButtonClick}) {
+export default function QuoteForm({ onQuoteSubmitted, onButtonClick }) {
 
     const [inputNameText, setInputNameText] = useState('');
     const [inputQuoteText, setInputQuoteText] = useState('');

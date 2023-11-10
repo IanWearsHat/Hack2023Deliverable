@@ -33,7 +33,7 @@
 		background-position: 20% 60%;
 	}
 	50% {
-		background-position: 80% 60%;
+		background-position: 80% 50%;
 	}
 	100% {
 		background-position: 20% 60%;
@@ -41,11 +41,8 @@
 }
 
 .quoteInputFlex {
-    display: flex;
-}
-
-.quoteInputFlex > * {
     margin: 1rem;
+    display: flex;
 }
 
 .quoteSelector {
@@ -58,4 +55,9 @@
 
 p {
     font-size: 36px;
+    margin: 2rem;
+}
+
+.previousQuoteSelector {
+    margin-left: 1rem;
 }
