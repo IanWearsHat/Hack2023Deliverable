@@ -46,7 +46,6 @@ def post_message(name: str = Form(), message: str = Form()) -> RedirectResponse:
 
     # You may modify the return value as needed to support other functionality
     return RedirectResponse("/", status.HTTP_303_SEE_OTHER)
-    # TODO: maybe changed to not RedirectResponse so that it doesn't reload the page
 
 
 @app.get("/quote")
@@ -78,7 +77,6 @@ def get_message(time_cutoff: str) -> list[Quote]:
     """
     for i in range(len(database["quotes"]) - 1, 0, -1):
         quote = database["quotes"][i]
-
         # .isoformat allows direct comparison of strings
         if quote["time"] > date_cutoff:
             # unsure if this is needed, bc at the end of the function, you return a dictionary whether it's a Quote class or not
