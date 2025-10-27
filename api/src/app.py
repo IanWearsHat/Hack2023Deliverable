@@ -78,8 +78,6 @@ def get_message(time_cutoff: str) -> list[Quote]:
         quote = database["quotes"][i]
         # .isoformat allows direct comparison of strings
         if quote["time"] < date_cutoff:
-            # unsure if this is needed, bc at the end of the function, you return a dictionary whether it's a Quote class or not
-            # return_quote = Quote(name=quote["name"], message=quote["message"], time=quote["time"])
             returned_quotes.append(quote)
         else:
             break
