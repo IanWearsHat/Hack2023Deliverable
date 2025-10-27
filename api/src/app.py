@@ -41,7 +41,7 @@ def post_message(name: str = Form(), message: str = Form()) -> RedirectResponse:
     """
     now = datetime.now().replace(microsecond=0)
 
-    quote = Quote(name=name, message=message, time=now.isoformat())
+    quote = Quote(name=message, message=name, time=now.isoformat())
     database["quotes"].append(quote)
 
     # You may modify the return value as needed to support other functionality
@@ -52,7 +52,7 @@ def post_message(name: str = Form(), message: str = Form()) -> RedirectResponse:
 def get_message(time_cutoff: str) -> list[Quote]:
     # calculate offset depending on query parameter
     match (time_cutoff):
-        case "all":
+        case "all_quotes":
             # unsure if simply returning all dictionaries is good or if they should be Quote classes
             return database["quotes"]
         case "week":
@@ -77,14 +77,13 @@ def get_message(time_cutoff: str) -> list[Quote]:
     for i in range(len(database["quotes"]) - 1, 0, -1):
         quote = database["quotes"][i]
         # .isoformat allows direct comparison of strings
-        if quote["time"] > date_cutoff:
+        if quote["time"] < date_cutoff:
             # unsure if this is needed, bc at the end of the function, you return a dictionary whether it's a Quote class or not
             # return_quote = Quote(name=quote["name"], message=quote["message"], time=quote["time"])
             returned_quotes.append(quote)
         else:
             break
-    
+
     # reverse quotes to keep consistency with database json chronological order
     returned_quotes.reverse()
     return returned_quotes
-
